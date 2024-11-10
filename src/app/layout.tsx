@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.css";
 
-// If loading a variable font, you don't need to specify the font weight
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],

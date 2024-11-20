@@ -1,0 +1,35 @@
+.navbar {
+  gap: 21px;
+  margin-left: 18px;
+  margin-right: 69px;
+
+  .logo {
+    &-link {
+      display: block;
+    }
+
+    &-img {
+      
+    }
+  }
+
+  .menu {
+    &-items {
+      &__list {
+        &-item {
+          &-link {
+            color: var(--white);
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    &-btn {
+
+    }
+  }
+}

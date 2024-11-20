@@ -2,6 +2,7 @@ import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.css";
+import "./generals.scss";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],

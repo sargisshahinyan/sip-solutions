@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --light-blue: #455677;
+  --dark-blue: #172a51;
+  --yellow: #BFA27B;
+
+  --primary-color: var(--dark-blue);
+  --text-color: var(--black);
+}
+
 ul[role='list'], ol[role='list'] {
   list-style: none;
 }

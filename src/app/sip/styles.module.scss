@@ -20,7 +20,7 @@
 
   &__inner-content {
     z-index: 1;
-    border: 1px solid rgb(191, 162, 123);
+    border: 1px solid var(--yellow);
     border-radius: 7px;
     width: calc(100% - 104px);
     height: calc(100% - 96px);

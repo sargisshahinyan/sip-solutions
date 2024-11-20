@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 /* Reset CSS */
 * {
   margin: 0;

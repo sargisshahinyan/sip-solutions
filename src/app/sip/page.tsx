@@ -1,12 +1,22 @@
 import { Button } from "@/shared/components/Button";
+import { Wrapper } from "@/shared/components/Wrapper";
+import classNames from "classnames/bind";
 
 import styles from "./styles.module.scss";
 
+const cx = classNames.bind(styles);
+
 export default function Home() {
   return (
-    <div>
-      <h1 className={styles["some-class"]}>Home page</h1>
-      <Button>Hello me</Button>
-    </div>
+    <>
+      <section className={styles["top-section"]}>
+        <div className={styles["top-section__inner-content"]}>
+          <Wrapper>
+            {/*<h1 className={styles["some-class"]}>Home page</h1>*/}
+            {/*<Button className={cx("button-1", "some-class")}>Hello me</Button>*/}
+          </Wrapper>
+        </div>
+      </section>
+    </>
   );
 }

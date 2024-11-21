@@ -69,8 +69,8 @@ export const Navbar = ({ className = "" }: { className?: string; children?: Reac
             </li>
           </ul>
         </div>
-        <div className={styles["menu-btn"]}>
-          <Button className={cx("button-1", "some-class")}>Request</Button>
+        <div className={styles["menu-btn-content"]}>
+          <Button className={cx("menu-btn")}>Request</Button>
         </div>
       </div>
     </div>

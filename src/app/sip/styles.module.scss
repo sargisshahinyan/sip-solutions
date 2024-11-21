@@ -59,3 +59,37 @@
     }
   }
 }
+
+.achievements-section {
+  background: var(--blue-light) url("/bg-achievements.png") no-repeat center center;
+  background-size: cover;
+  height: 209px;
+
+  &-content {
+    height: 209px;
+
+    &__item {
+      color: var(--white);
+      text-align: center;
+      padding: 6px 12px;
+      flex: 1;
+
+      &:not(:last-child) {
+        border-right: 1px solid var(--yellow);
+      }
+
+      &-quantity {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.17;
+      }
+
+      &-description {
+        margin-top: 1px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.17;
+      }
+    }
+  }
+}

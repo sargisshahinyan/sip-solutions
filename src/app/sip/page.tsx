@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={cx("info-section")}>
+      <section className={styles["info-section"]}>
         <div className={cx("flex-col-c", "info-section-content")}>
           <h1 className={cx("page-title", "info-section-content__title")}>Lorem ipsum dolor sit amet</h1>
           <p className={cx("info-section-content__text")}>
@@ -36,6 +36,24 @@ export default function Home() {
           </p>
           <Button className={cx("")}>About us</Button>
         </div>
+      </section>
+      <section className={styles["achievements-section"]}>
+        <Wrapper>
+          <div className={cx("flex-spar-c", "achievements-section-content")}>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
+            </div>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
+            </div>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>
+            </div>
+          </div>
+        </Wrapper>
       </section>
       <Footer></Footer>
     </>

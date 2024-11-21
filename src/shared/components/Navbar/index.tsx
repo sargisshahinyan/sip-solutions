@@ -13,15 +13,15 @@ const cx = classNames.bind(styles);
 
 export const Navbar = ({ className = "" }: { className?: string; children?: ReactNode }) => {
   return (
-    <div className={cx("navbar", "flex-sp-c", className)}>
+    <div className={cx("navbar", "flex-spb-c", className)}>
       <div className={styles["logo"]}>
         <Link className={styles["logo-link"]} href="/">
           <Image className={styles["logo-img"]} src={logo} alt="logo" />
         </Link>
       </div>
-      <div className={cx("menu", "flex-sp-c")}>
-        <div className={cx("menu-items", "flex-sp-c")}>
-          <ul className={cx("menu-items__list", "flex-sp-c")}>
+      <div className={cx("menu", "flex-spb-c")}>
+        <div className={cx("menu-items", "flex-spb-c")}>
+          <ul className={cx("menu-items__list", "flex-spb-c")}>
             <li className={cx("menu-items__list-item")}>
               <Link className={cx("menu-items__list-item-link")} href="/">
                 About

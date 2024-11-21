@@ -19,9 +19,16 @@ p {
   color: var(--text-color);
 }
 
-.flex-sp-c {
+.flex-spb-c {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.flex-spar-c {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 24px;
 }

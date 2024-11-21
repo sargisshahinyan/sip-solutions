@@ -12,11 +12,17 @@ export default function Home() {
     <>
       <section className={styles["top-section"]}>
         <div className={styles["top-section__inner-content"]}>
-          {/*<Wrapper>*/}
-          {/*  /!*<h1 className={styles["some-class"]}>Home page</h1>*!/*/}
-          {/*  /!*<Button className={cx("button-1", "some-class")}>Hello me</Button>*!/*/}
-          {/*</Wrapper>*/}
           <Navbar></Navbar>
+
+          <div className={styles["top-section__inner-content__info"]}>
+            <h1 className={styles["top-section-title"]}>Lorem ipsum dolor</h1>
+            <p className={styles["top-section-text"]}>
+              Lorem ipsum dolor sit amet consectetur. Dui in dolor in vitae. Viverra pulvinar ornare
+              <br />
+              sapien pulvinar cursus sit. Diam fames vulputat.
+            </p>
+            <Button className={cx("")}>Request</Button>
+          </div>
         </div>
       </section>
     </>

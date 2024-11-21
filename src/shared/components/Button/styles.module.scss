@@ -25,4 +25,14 @@
       color: var(--white);
     }
   }
+
+  &.top-section-btn {
+    background: var(--yellow);
+    color: (--white);
+
+    &:hover {
+      background: var(--white);
+      color: var(--blue-dark);
+    }
+  }
 }

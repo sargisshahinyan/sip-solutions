@@ -22,7 +22,7 @@ export default function Home() {
               <br />
               sapien pulvinar cursus sit. Diam fames vulputat.
             </p>
-            <Button className={cx("")}>Request</Button>
+            <Button className={cx("top-section-btn")}>Request</Button>
           </div>
         </div>
       </section>

@@ -1,0 +1,10 @@
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+
+  &-text {
+    font-size: 19px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}

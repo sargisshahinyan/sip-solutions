@@ -61,6 +61,36 @@ export default function Home() {
         </Wrapper>
       </section>
 
+      <section className={styles["gallery-section"]}>
+        <Wrapper>
+          <SectionTitle>Gallery</SectionTitle>
+        </Wrapper>
+      </section>
+
+      <section className={styles["blog-section"]}>
+        <Wrapper>
+          <SectionTitle>Blog</SectionTitle>
+        </Wrapper>
+      </section>
+
+      <section className={styles["contacts-section"]}>
+        <Wrapper>
+          <div className={cx("flex-spb-st", "contacts-section-content")}>
+            <div className={cx("flex-col-spb-st", "contacts-section-content__info")}>
+              <div>
+                <SectionTitle className={cx("contacts-section-content__info-title")}>Lorem ipsum dolor</SectionTitle>
+                <p className={styles["contacts-section-content__info-subtitle"]}>
+                  Lorem ipsum dolor sit amet consectetur.
+                </p>
+              </div>
+              <div>{/*  contacts */}</div>
+              <div>{/*  socials */}</div>
+            </div>
+            <div className={styles["contacts-section-content__form"]}></div>
+          </div>
+        </Wrapper>
+      </section>
+
       <Footer></Footer>
     </>
   );

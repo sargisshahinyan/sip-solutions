@@ -31,10 +31,8 @@
   }
 
   &-title {
-    font-size: 48px;
-    line-height: 1.17;
-    font-weight: 700;
-    color: var(--white);
+    font-size: 48px !important;
+    color: var(--white) !important;
   }
 
   &-text {
@@ -64,19 +62,24 @@
   background: var(--blue-light) url("/bg-achievements.png") no-repeat center center;
   background-size: cover;
   height: 209px;
+  display: flex;
+  align-items: center;
 
   &-content {
-    height: 209px;
+    //height: 209px;
+    width: 1016px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    & > div {
+      align-self: stretch;
+    }
+
 
     &__item {
       color: var(--white);
       text-align: center;
       padding: 6px 12px;
-      flex: 1;
-
-      &:not(:last-child) {
-        border-right: 1px solid var(--yellow);
-      }
 
       &-quantity {
         font-weight: 700;
@@ -90,6 +93,45 @@
         font-size: 20px;
         line-height: 1.17;
       }
+    }
+
+    &__line {
+      border-right: 1px solid var(--yellow);
+    }
+  }
+}
+
+.gallery-section {
+  margin-top: 110px;
+}
+
+.contacts-section {
+  margin-top: 110px;
+  background: var(--blue-light);
+
+  &-content {
+    padding: 77px 0;
+
+    &__info {
+      &-title {
+        margin-top: 16px;
+        font-size: 38px !important;
+        color: var(--white) !important;
+        text-align: left !important;
+      }
+
+      &-subtitle {
+        margin-top: 19px;
+        line-height: 1.17;
+        color: var(--white);
+      }
+    }
+
+    &__form {
+      width: 493px;
+      height: 512px;
+      border-radius: 4px;
+      background: var(--white);
     }
   }
 }

@@ -7,6 +7,7 @@
 
 :root {
   --white: #FFFFFF;
+  --white-off: #FAFAFA;
   --black: #000000;
   --blue-light: #455677;
   --blue-dark: #172a51;
@@ -14,6 +15,7 @@
 
   --primary-color: var(--blue-dark);
   --text-color: var(--black);
+  --body-bg-color: var(--white-off);
 }
 
 body, html {

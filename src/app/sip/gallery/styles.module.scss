@@ -1,0 +1,20 @@
+.gallery {
+  margin: 0 auto;
+  padding: 5.875rem 2.5rem 6.375rem;
+  max-width: 76.5rem;
+
+  .content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    padding: 4.5rem 1rem;
+
+    .content {
+      margin-top: 2rem;
+    }
+  }
+}

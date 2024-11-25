@@ -51,7 +51,7 @@ export const Navbar = ({ className = "", isTransparent = true }: { className?: s
               </Link>
             </li>
             <li className={cx("menu-items__list-item")}>
-              <Link className={cx("menu-items__list-item-link")} href="/">
+              <Link className={cx("menu-items__list-item-link")} href="/sip/gallery">
                 Gallery
               </Link>
             </li>

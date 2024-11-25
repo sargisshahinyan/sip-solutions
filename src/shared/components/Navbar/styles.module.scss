@@ -39,5 +39,9 @@
     &-btn-content {
 
     }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
 }

@@ -39,15 +39,17 @@ export default function Home() {
       </section>
       <section className={styles["achievements-section"]}>
         <Wrapper>
-          <div className={cx("flex-spar-c", "achievements-section-content")}>
+          <div className={cx("flex-spb-c", "achievements-section-content")}>
             <div className={styles["achievements-section-content__item"]}>
               <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
               <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
             </div>
+            <div className={styles["achievements-section-content__line"]}></div>
             <div className={styles["achievements-section-content__item"]}>
               <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
               <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
             </div>
+            <div className={styles["achievements-section-content__line"]}></div>
             <div className={styles["achievements-section-content__item"]}>
               <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
               <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>

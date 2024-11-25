@@ -64,19 +64,24 @@
   background: var(--blue-light) url("/bg-achievements.png") no-repeat center center;
   background-size: cover;
   height: 209px;
+  display: flex;
+  align-items: center;
 
   &-content {
-    height: 209px;
+    //height: 209px;
+    width: 1016px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    & > div {
+      align-self: stretch;
+    }
+
 
     &__item {
       color: var(--white);
       text-align: center;
       padding: 6px 12px;
-      flex: 1;
-
-      &:not(:last-child) {
-        border-right: 1px solid var(--yellow);
-      }
 
       &-quantity {
         font-weight: 700;
@@ -90,6 +95,10 @@
         font-size: 20px;
         line-height: 1.17;
       }
+    }
+
+    &__line {
+      border-right: 1px solid var(--yellow);
     }
   }
 }

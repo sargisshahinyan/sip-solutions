@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 import { Navbar } from "@/shared/components/Navbar";
 import { Footer } from "@/shared/components/Footer";
+import { PageTitle } from "@/shared/components/PageTitle";
 
 const cx = classNames.bind(styles);
 
@@ -26,9 +27,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className={styles["info-section"]}>
         <div className={cx("flex-col-c", "info-section-content")}>
-          <h1 className={cx("page-title", "info-section-content__title")}>Lorem ipsum dolor sit amet</h1>
+          <PageTitle className={cx("info-section-content__title")}>Lorem ipsum dolor sit amet</PageTitle>
           <p className={cx("info-section-content__text")}>
             Lorem ipsum dolor sit amet consectetur. Nisl euismod dui nullam volutpat et. Quis mattis diam tortor diam
             volutpat quisque suspendisse cursus adipiscing. Lorem nibh aliquam quis elementum porta tincidunt lacus
@@ -37,6 +39,7 @@ export default function Home() {
           <Button className={cx("")}>About us</Button>
         </div>
       </section>
+
       <section className={styles["achievements-section"]}>
         <Wrapper>
           <div className={cx("flex-spb-c", "achievements-section-content")}>
@@ -57,6 +60,7 @@ export default function Home() {
           </div>
         </Wrapper>
       </section>
+
       <Footer></Footer>
     </>
   );

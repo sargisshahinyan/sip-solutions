@@ -67,12 +67,6 @@ export default function Home() {
         </Wrapper>
       </section>
 
-      <section className={styles["blog-section"]}>
-        <Wrapper>
-          <SectionTitle>Blog</SectionTitle>
-        </Wrapper>
-      </section>
-
       <section className={styles["contacts-section"]}>
         <Wrapper>
           <div className={cx("flex-spb-st", "contacts-section-content")}>

@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 import { Navbar } from "@/shared/components/Navbar";
 import { Footer } from "@/shared/components/Footer";
 import { PageTitle } from "@/shared/components/PageTitle";
+import { SectionTitle } from "@/shared/components/SectionTitle";
 
 const cx = classNames.bind(styles);
 
@@ -15,9 +16,8 @@ export default function Home() {
       <section className={styles["top-section"]}>
         <div className={styles["top-section__inner-content"]}>
           <Navbar></Navbar>
-
           <div className={cx("flex-col-c", "top-section__inner-content__info")}>
-            <h1 className={styles["top-section-title"]}>Lorem ipsum dolor</h1>
+            <SectionTitle className={cx("top-section-title")}>Lorem ipsum dolor</SectionTitle>
             <p className={styles["top-section-text"]}>
               Lorem ipsum dolor sit amet consectetur. Dui in dolor in vitae. Viverra pulvinar ornare
               <br />

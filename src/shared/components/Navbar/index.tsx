@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import classNames from "classnames/bind";
 import { Button } from "@/shared/components/Button";
 
@@ -11,9 +10,13 @@ import styles from "./styles.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const Navbar = ({ className = "" }: { className?: string; children?: ReactNode }) => {
+export const Navbar = ({ className = "", isTransparent = true }: { className?: string; isTransparent?: boolean }) => {
   return (
-    <div className={cx("navbar", "flex-spb-c", className)}>
+    <div
+      className={cx("navbar", "flex-spb-c", className, {
+        transparent: !isTransparent,
+      })}
+    >
       <div className={styles["logo"]}>
         <Link className={styles["logo-link"]} href="/">
           <Image className={styles["logo-img"]} src={logo} alt="logo" />

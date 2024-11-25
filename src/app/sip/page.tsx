@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <section className={styles["top-section"]}>
         <div className={styles["top-section__inner-content"]}>
-          <Navbar></Navbar>
+          <Navbar isTransparent={false} />
           <div className={cx("flex-col-c", "top-section__inner-content__info")}>
             <SectionTitle className={cx("top-section-title")}>Lorem ipsum dolor</SectionTitle>
             <p className={styles["top-section-text"]}>

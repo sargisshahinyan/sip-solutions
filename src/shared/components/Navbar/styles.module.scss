@@ -1,7 +1,11 @@
 .navbar {
   gap: 21px;
-  margin-left: 18px;
-  margin-right: 69px;
+  padding-left: 18px;
+  padding-right: 69px;
+
+  &:not(.transparent) {
+    background-color: var(--blue-dark);
+  }
 
   .logo {
     &-link {
@@ -9,7 +13,7 @@
     }
 
     &-img {
-      
+
     }
   }
 
@@ -23,7 +27,7 @@
             line-height: 1.17;
             color: var(--white);
             transition: color .3s;
-            
+
             &:hover {
               color: var(--yellow);
             }

@@ -27,6 +27,7 @@
 
     &__info {
       margin-top: 131px;
+      gap: 16px;
     }
   }
 
@@ -47,11 +48,12 @@
   &-content {
     max-width: 600px;
     margin: 0 auto;
-    
+    gap: 16px;
+
     &__title {
-      
+
     }
-    
+
     &__text {
       text-align: center;
     }
@@ -113,6 +115,8 @@
     padding: 77px 0;
 
     &__info {
+      gap: 24px;
+
       &-title {
         margin-top: 16px;
         font-size: 38px !important;
@@ -124,6 +128,44 @@
         margin-top: 19px;
         line-height: 1.17;
         color: var(--white);
+      }
+
+      &-contact {
+        gap: 16px;
+
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+
+        &__icon {
+
+        }
+
+        &__link {
+          color: var(--white);
+          font-size: 16px;
+          line-height: 1.17;
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        &__text {
+          color: var(--white);
+          font-size: 16px;
+          line-height: 1.17;
+          font-weight: 500;
+        }
+      }
+
+      &-social {
+        gap: 24px;
+
+        &__icon {
+
+        }
       }
     }
 

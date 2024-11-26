@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/shared/components/Navbar";
 import { PageTitle } from "@/shared/components/PageTitle";
+import { Footer } from "@/shared/components/Footer";
 
 import { GallerySection } from "./components/GallerySection";
 import { ImageGallery } from "@/shared/components/SliderCarousel";
@@ -90,6 +91,7 @@ const GalleryPage = () => {
           />
         </div>
       </main>
+      <Footer />
     </>
   );
 };

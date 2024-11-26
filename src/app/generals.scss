@@ -8,36 +8,36 @@ p {
   color: var(--text-color);
 }
 
-.flex-spb-st {
+.flex-c {
+  display: flex;
+  align-items: center;
+}
+
+.flex-spb {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
 }
 
 .flex-spb-c {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
 }
 
 .flex-spar-c {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 24px;
 }
 
 .flex-col-c {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
 }
 
-.flex-col-spb-st {
+.flex-col-spb {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 16px;
+  justify-content: space-between;
 }

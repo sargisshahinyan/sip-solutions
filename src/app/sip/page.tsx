@@ -8,6 +8,16 @@ import { Footer } from "@/shared/components/Footer";
 import { PageTitle } from "@/shared/components/PageTitle";
 import { SectionTitle } from "@/shared/components/SectionTitle";
 
+import Link from "next/link";
+import Image from "next/image";
+
+import phoneIcon from "../assets/icons/phone-icon.svg";
+import mailIcon from "../assets/icons/mail-icon.svg";
+import addressIcon from "../assets/icons/address-icon.svg";
+import fbIcon from "../assets/icons/fb-icon.svg";
+import inIcon from "../assets/icons/in-icon.svg";
+import ytIcon from "../assets/icons/yt-icon.svg";
+
 const cx = classNames.bind(styles);
 
 export default function Home() {
@@ -69,16 +79,53 @@ export default function Home() {
 
       <section className={styles["contacts-section"]}>
         <Wrapper>
-          <div className={cx("flex-spb-st", "contacts-section-content")}>
-            <div className={cx("flex-col-spb-st", "contacts-section-content__info")}>
+          <div className={cx("flex-spb", "contacts-section-content")}>
+            <div className={cx("flex-col-spb", "contacts-section-content__info")}>
               <div>
                 <SectionTitle className={cx("contacts-section-content__info-title")}>Lorem ipsum dolor</SectionTitle>
                 <p className={styles["contacts-section-content__info-subtitle"]}>
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </div>
-              <div>{/*  contacts */}</div>
-              <div>{/*  socials */}</div>
+              <div>
+                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                  <Image
+                    className={styles["contacts-section-content__info-contact__icon"]}
+                    src={phoneIcon}
+                    alt="phoneIcon"
+                  />
+                  <Link className={styles["contacts-section-content__info-contact__link"]} href="/">
+                    +123456789
+                  </Link>
+                </div>
+
+                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                  <Image
+                    className={styles["contacts-section-content__info-contact__icon"]}
+                    src={mailIcon}
+                    alt="mailIcon"
+                  />
+                  <Link className={styles["contacts-section-content__info-contact__link"]} href="/">
+                    Youremail@gmail.com
+                  </Link>
+                </div>
+
+                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                  <Image
+                    className={styles["contacts-section-content__info-contact__icon"]}
+                    src={addressIcon}
+                    alt="addressIcon"
+                  />
+                  <span className={styles["contacts-section-content__info-contact__text"]}>Your address 123</span>
+                </div>
+              </div>
+              <div>
+                <div className={cx("flex-c", "contacts-section-content__info-social")}>
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={fbIcon} alt="fbIcon" />
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={inIcon} alt="fbIcon" />
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={ytIcon} alt="fbIcon" />
+                </div>
+              </div>
             </div>
             <div className={styles["contacts-section-content__form"]}></div>
           </div>

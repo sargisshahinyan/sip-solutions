@@ -18,8 +18,12 @@
   }
 
   .menu {
+    gap: 24px;
+
     &-items {
       &__list {
+        gap: 24px;
+
         &-item {
           &-link {
             font-weight: 500;

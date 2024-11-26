@@ -1,7 +1,10 @@
+"use client";
+
 import { Navbar } from "@/shared/components/Navbar";
 import { PageTitle } from "@/shared/components/PageTitle";
 
 import { GallerySection } from "./components/GallerySection";
+import { ImageGallery } from "@/shared/components/SliderCarousel";
 
 import img1 from "@/app/assets/images/gallery/1.jpeg";
 import img2 from "@/app/assets/images/gallery/2.jpeg";
@@ -20,11 +23,37 @@ import img14 from "@/app/assets/images/gallery/14.jpeg";
 import img15 from "@/app/assets/images/gallery/15.jpeg";
 
 import styles from "./styles.module.scss";
+import { useState } from "react";
 
 const GalleryPage = () => {
+  const [clickedElement, setClickedElement] = useState<undefined | typeof img1>();
+
   return (
     <>
       <Navbar />
+      {clickedElement && (
+        <ImageGallery
+          images={[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15]}
+          initialActiveImageIndex={[
+            img1,
+            img2,
+            img3,
+            img4,
+            img5,
+            img6,
+            img7,
+            img8,
+            img9,
+            img10,
+            img11,
+            img12,
+            img13,
+            img14,
+            img15,
+          ].indexOf(clickedElement)}
+          onClose={() => setClickedElement(undefined)}
+        />
+      )}
       <main className={styles.gallery}>
         <PageTitle>Gallery</PageTitle>
         <div className={styles.content}>
@@ -36,6 +65,7 @@ const GalleryPage = () => {
               { type: "image", src: img4 },
               { type: "image", src: img5 },
             ]}
+            onClick={(image) => setClickedElement(image)}
           />
           <GallerySection
             placement="right"
@@ -46,6 +76,7 @@ const GalleryPage = () => {
               { type: "image", src: img9 },
               { type: "image", src: img10 },
             ]}
+            onClick={(image) => setClickedElement(image)}
           />
           <GallerySection
             assets={[
@@ -55,6 +86,7 @@ const GalleryPage = () => {
               { type: "image", src: img14 },
               { type: "image", src: img15 },
             ]}
+            onClick={(image) => setClickedElement(image)}
           />
         </div>
       </main>

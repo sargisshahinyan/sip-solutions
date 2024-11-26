@@ -85,7 +85,7 @@ export default function Home() {
         </Wrapper>
       </section>
 
-      <Footer></Footer>
+      <Footer theme="light" showSocialIcons={false} />
     </>
   );
 }

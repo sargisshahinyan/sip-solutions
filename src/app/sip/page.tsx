@@ -17,6 +17,7 @@ import addressIcon from "../assets/icons/address-icon.svg";
 import fbIcon from "../assets/icons/fb-icon.svg";
 import inIcon from "../assets/icons/in-icon.svg";
 import ytIcon from "../assets/icons/yt-icon.svg";
+import sipVector from "../assets/images/sip-vector.svg";
 
 const cx = classNames.bind(styles);
 
@@ -72,12 +73,21 @@ export default function Home() {
       </section>
 
       <section className={styles["gallery-section"]}>
+        <div className={styles["sip-vector-bottom-white"]}>
+          {/*<Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
+        </div>
         <Wrapper>
           <SectionTitle>Gallery</SectionTitle>
         </Wrapper>
       </section>
 
       <section className={styles["contacts-section"]}>
+        {/*<div className={styles["sip-vector-top-blue"]}>*/}
+        {/*  <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
+        {/*</div>*/}
+        {/*<div className={styles["sip-vector-bottom-blue"]}>*/}
+        {/*  <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
+        {/*</div>*/}
         <Wrapper>
           <div className={cx("flex-spb", "contacts-section-content")}>
             <div className={cx("flex-col-spb", "contacts-section-content__info")}>
@@ -124,9 +134,27 @@ export default function Home() {
               </div>
               <div>
                 <div className={cx("flex-c", "contacts-section-content__info-social")}>
-                  <Image className={styles["contacts-section-content__info-social__icon"]} src={fbIcon} alt="fbIcon" />
-                  <Image className={styles["contacts-section-content__info-social__icon"]} src={inIcon} alt="fbIcon" />
-                  <Image className={styles["contacts-section-content__info-social__icon"]} src={ytIcon} alt="fbIcon" />
+                  <Link href={"/"}>
+                    <Image
+                      className={styles["contacts-section-content__info-social__icon"]}
+                      src={fbIcon}
+                      alt="fbIcon"
+                    />
+                  </Link>
+                  <Link href={"/"}>
+                    <Image
+                      className={styles["contacts-section-content__info-social__icon"]}
+                      src={inIcon}
+                      alt="inIcon"
+                    />
+                  </Link>
+                  <Link href={"/"}>
+                    <Image
+                      className={styles["contacts-section-content__info-social__icon"]}
+                      src={ytIcon}
+                      alt="ytIcon"
+                    />
+                  </Link>
                 </div>
               </div>
             </div>

@@ -109,6 +109,7 @@
 .gallery-section {
   padding-bottom: 110px;
   position: relative;
+  overflow: hidden;
 
   .sip-vector-img {
   }
@@ -124,6 +125,7 @@
 .contacts-section {
   background: var(--blue-light);
   position: relative;
+  overflow: hidden;
 
   .sip-vector-img {
   }
@@ -136,6 +138,8 @@
 
   .sip-vector-bottom-blue {
     position: absolute;
+    left: -143px;
+    bottom: -145px;
   }
 
   &-content {
@@ -201,6 +205,7 @@
       height: 512px;
       border-radius: 4px;
       background: var(--white);
+      z-index: 2;
     }
   }
 }

@@ -17,7 +17,7 @@ import addressIcon from "../assets/icons/address-icon.svg";
 import fbIcon from "../assets/icons/fb-icon.svg";
 import inIcon from "../assets/icons/in-icon.svg";
 import ytIcon from "../assets/icons/yt-icon.svg";
-// import sipVector from "../assets/images/sip-vector.svg";
+import sipVector from "../assets/images/sip-vector.svg";
 
 const cx = classNames.bind(styles);
 
@@ -74,7 +74,7 @@ export default function Home() {
 
       <section className={styles["gallery-section"]}>
         <div className={styles["sip-vector-bottom-white"]}>
-          {/*<Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
+          <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
         </div>
         <Wrapper>
           <SectionTitle>Gallery</SectionTitle>
@@ -82,12 +82,12 @@ export default function Home() {
       </section>
 
       <section className={styles["contacts-section"]}>
-        {/*<div className={styles["sip-vector-top-blue"]}>*/}
-        {/*  <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
-        {/*</div>*/}
-        {/*<div className={styles["sip-vector-bottom-blue"]}>*/}
-        {/*  <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />*/}
-        {/*</div>*/}
+        <div className={styles["sip-vector-top-blue"]}>
+          <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
+        </div>
+        <div className={styles["sip-vector-bottom-blue"]}>
+          <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
+        </div>
         <Wrapper>
           <div className={cx("flex-spb", "contacts-section-content")}>
             <div className={cx("flex-col-spb", "contacts-section-content__info")}>

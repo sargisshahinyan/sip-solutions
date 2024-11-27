@@ -94,9 +94,9 @@ export default function Home() {
                     src={phoneIcon}
                     alt="phoneIcon"
                   />
-                  <Link className={styles["contacts-section-content__info-contact__link"]} href="/">
-                    +123456789
-                  </Link>
+                  <a className={styles["contacts-section-content__info-contact__link"]} href="tel:+17473328603">
+                    +17473328603
+                  </a>
                 </div>
 
                 <div className={cx("flex-c", "contacts-section-content__info-contact")}>
@@ -105,9 +105,12 @@ export default function Home() {
                     src={mailIcon}
                     alt="mailIcon"
                   />
-                  <Link className={styles["contacts-section-content__info-contact__link"]} href="/">
-                    Youremail@gmail.com
-                  </Link>
+                  <a
+                    className={styles["contacts-section-content__info-contact__link"]}
+                    href="sipsolutionsip@outlook.com"
+                  >
+                    sipsolutionsip@outlook.com
+                  </a>
                 </div>
 
                 <div className={cx("flex-c", "contacts-section-content__info-contact")}>

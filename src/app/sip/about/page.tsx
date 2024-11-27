@@ -29,20 +29,23 @@ export default function AboutPage() {
               <div className={styles["about-content-item__desc"]}>
                 <SectionTitle className={styles["about-content-item__desc-title"]}>About Sipology</SectionTitle>
                 <p>
-                  At Sip Solution, we're more than just a team; we're architects of unforgettable Luxury experiences.
-                  With over 13 years of hospitality mastery, we infuse warmth and authenticity into every event
-                  specifically, depending on your liking and preferences.
+                  At Sip Solution, we&#39;re more than just a team; we&#39;re architects of unforgettable Luxury
+                  experiences. With over 13 years of hospitality mastery, we infuse warmth and authenticity into every
+                  event specifically, depending on your liking and preferences.
                   <br />
                   From crafting vibrant and elegant cocktails that reflect your unique style to delivering impeccable
                   service, we ensure each moment is filled with joy and surprise with us.
                 </p>
                 <p>
                   Join us on a journey where happiness is always on the menu. Welcome to Sip Solution, where every sip
-                  is a celebration of life's beautiful moments.
+                  is a celebration of life&#39;s beautiful moments.
                 </p>
               </div>
             </div>
             <div className={cx("flex-spb-c", "about-content-item")}>
+              <div className={styles["about-content-item__img"]}>
+                <Image src={img2} alt="img2" />
+              </div>
               <div className={styles["about-content-item__desc"]}>
                 <SectionTitle className={styles["about-content-item__desc-title"]}>Our Values</SectionTitle>
                 <p>
@@ -51,9 +54,6 @@ export default function AboutPage() {
                   We celebrate your individuality by delivering exceptional service, warmth, authenticity, and genuine
                   care which defines our commitment to excellence.
                 </p>
-              </div>
-              <div className={styles["about-content-item__img"]}>
-                <Image src={img2} alt="img2" />
               </div>
             </div>
             <div className={cx("flex-spb-c", "about-content-item")}>

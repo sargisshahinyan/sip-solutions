@@ -1,6 +1,5 @@
 .about {
-  padding-top: 5.875rem;
-  padding-bottom: 2.875rem;
+  padding: 5.875rem 1.5rem 2.875rem;
 
   &-content {
     margin-top: 48px;
@@ -9,7 +8,19 @@
       gap: 128px;
       margin-bottom: 56px;
 
+      &:nth-child(even) {
+        .about-content-item__desc {
+          order: 1;
+        }
+
+        .about-content-item__img {
+          order: 2;
+        }
+      }
+
       &__img {
+        order: 1;
+        flex-shrink: 0;
         width: 600px;
         height: 600px;
         border-radius: 50%;
@@ -24,14 +35,99 @@
       }
 
       &__desc {
-        max-width: 496px;
+        order: 2;
+        flex: 1;
         
         &-title {
           text-align: left !important;
+          margin-bottom: 1.5rem;
         }
 
         p {
-          margin-top: 1.5rem;
+          &:not(:last-child) {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1257px) {
+    &-content {
+      &-item {
+        gap: 56px;
+
+        &__img {
+          width: 440px;
+          height: 440px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 4.5rem 1.5rem 1rem;
+
+    &-content {
+      margin-top: 56px;
+
+      &-item {
+        &__img {
+          width: 280px;
+          height: 280px;
+
+          img {
+
+          }
+        }
+        &__desc {
+          &-title {
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            &:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 4.5rem 0 2rem;
+
+    &-content {
+      margin-top: 32px;
+
+      &-item {
+        flex-direction: column;
+        gap: 40px;
+        margin-bottom: 40px;
+
+        &:nth-child(even) {
+          .about-content-item__desc {
+            order: 2;
+          }
+
+          .about-content-item__img {
+            order: 1;
+          }
+        }
+
+        &__img {
+          img {
+
+          }
+        }
+
+        &__desc {
+          &-title {
+          }
+
+          p {
+          }
         }
       }
     }

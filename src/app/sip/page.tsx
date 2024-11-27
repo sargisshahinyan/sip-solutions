@@ -17,7 +17,7 @@ import addressIcon from "../assets/icons/address-icon.svg";
 import fbIcon from "../assets/icons/fb-icon.svg";
 import inIcon from "../assets/icons/in-icon.svg";
 import ytIcon from "../assets/icons/yt-icon.svg";
-import sipVector from "../assets/images/sip-vector.svg";
+// import sipVector from "../assets/images/sip-vector.svg";
 
 const cx = classNames.bind(styles);
 

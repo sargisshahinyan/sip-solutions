@@ -4,4 +4,8 @@
   font-weight: 700;
   color: var(--primary-color);
   text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: 30px;
+  }
 }

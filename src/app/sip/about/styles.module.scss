@@ -1,2 +1,39 @@
-.about-us {
+.about {
+  padding-top: 5.875rem;
+  padding-bottom: 2.875rem;
+
+  &-content {
+    margin-top: 48px;
+
+    &-item {
+      gap: 128px;
+      margin-bottom: 56px;
+
+      &__img {
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      &__desc {
+        max-width: 496px;
+        
+        &-title {
+          text-align: left !important;
+        }
+
+        p {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
 }

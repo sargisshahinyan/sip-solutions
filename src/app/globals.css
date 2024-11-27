@@ -13,8 +13,9 @@
   --blue-dark: #172a51;
   --yellow: #BFA27B;
 
+  --text-color: rgba(0, 0, 0, 0.85);
+
   --primary-color: var(--blue-dark);
-  --text-color: var(--black);
   --body-bg-color: var(--white-off);
 }
 

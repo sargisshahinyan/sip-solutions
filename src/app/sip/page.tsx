@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 import classNames from "classnames/bind";
 
 import { Navbar } from "@/shared/components/Navbar";
@@ -20,12 +23,23 @@ import ytIcon from "../assets/icons/yt-icon.svg";
 import sipVector from "../assets/images/sip-vector.svg";
 
 import styles from "./styles.module.scss";
+import { ImageGallery } from "@/shared/components/SliderCarousel";
 
 const cx = classNames.bind(styles);
 
 export default function Home() {
+  const [clickedElement, setClickedElement] = useState<undefined | StaticImageData>();
+
   return (
     <>
+      {clickedElement && (
+        <ImageGallery
+          images={galleryImages}
+          initialActiveImageIndex={galleryImages.indexOf(clickedElement)}
+          onClose={() => setClickedElement(undefined)}
+        />
+      )}
+
       <section className={styles["top-section"]}>
         <div className={styles["top-section__inner-content"]}>
           <Navbar isTransparent={false} />
@@ -84,13 +98,13 @@ export default function Home() {
         <div className={styles["images-carousel-wrapper"]}>
           <div className={styles["images-carousel"]}>
             {galleryImages.slice(0, 14).map((image, index) => (
-              <div key={index} className={cx("images-carousel__item")}>
+              <div key={index} className={cx("images-carousel__item")} onClick={() => setClickedElement(image)}>
                 <Image src={image} alt="" objectFit="cover" />
               </div>
             ))}
 
             {galleryImages.slice(0, 14).map((image, index) => (
-              <div key={index} className={cx("images-carousel__item")}>
+              <div key={index} className={cx("images-carousel__item")} onClick={() => setClickedElement(image)}>
                 <Image src={image} alt="" objectFit="cover" />
               </div>
             ))}

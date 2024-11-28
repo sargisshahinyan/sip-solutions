@@ -1,15 +1,15 @@
-import { Button } from "@/shared/components/Button";
-import { Wrapper } from "@/shared/components/Wrapper";
+import Link from "next/link";
+import Image from "next/image";
 import classNames from "classnames/bind";
 
-import styles from "./styles.module.scss";
 import { Navbar } from "@/shared/components/Navbar";
 import { Footer } from "@/shared/components/Footer";
 import { PageTitle } from "@/shared/components/PageTitle";
 import { SectionTitle } from "@/shared/components/SectionTitle";
+import { Button } from "@/shared/components/Button";
+import { Wrapper } from "@/shared/components/Wrapper";
 
-import Link from "next/link";
-import Image from "next/image";
+import { galleryImages } from "@/shared/data/galleryImages";
 
 import phoneIcon from "../assets/icons/phone-icon.svg";
 import mailIcon from "../assets/icons/mail-icon.svg";
@@ -18,6 +18,8 @@ import fbIcon from "../assets/icons/fb-icon.svg";
 import inIcon from "../assets/icons/in-icon.svg";
 import ytIcon from "../assets/icons/yt-icon.svg";
 import sipVector from "../assets/images/sip-vector.svg";
+
+import styles from "./styles.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -79,6 +81,21 @@ export default function Home() {
         <Wrapper>
           <SectionTitle>Gallery</SectionTitle>
         </Wrapper>
+        <div className={styles["images-carousel-wrapper"]}>
+          <div className={styles["images-carousel"]}>
+            {galleryImages.slice(0, 14).map((image, index) => (
+              <div key={index} className={cx("images-carousel__item")}>
+                <Image src={image} alt="" objectFit="cover" />
+              </div>
+            ))}
+
+            {galleryImages.slice(0, 14).map((image, index) => (
+              <div key={index} className={cx("images-carousel__item")}>
+                <Image src={image} alt="" objectFit="cover" />
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className={styles["contacts-section"]}>

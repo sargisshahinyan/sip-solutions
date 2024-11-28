@@ -22,10 +22,10 @@ export const ImageGallery = ({
   const dialogRef = useRef<ElementRef<"dialog">>(null);
 
   const onPrev = useCallback(() => {
-    setActiveImageIndex((current) => (current + 1 !== images.length ? current + 1 : 0));
+    setActiveImageIndex((current) => (current === 0 ? images.length - 1 : current - 1));
   }, [images.length]);
   const onNext = useCallback(() => {
-    setActiveImageIndex((current) => (current === 0 ? images.length - 1 : current - 1));
+    setActiveImageIndex((current) => (current + 1 !== images.length ? current + 1 : 0));
   }, [images.length]);
 
   useEffect(() => {

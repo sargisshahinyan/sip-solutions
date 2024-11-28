@@ -1,0 +1,10 @@
+.section-title-small {
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+
+  @media (max-width: 1024px) {
+  }
+}

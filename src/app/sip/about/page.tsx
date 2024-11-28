@@ -1,8 +1,10 @@
 import styles from "./styles.module.scss";
 import { Navbar } from "@/shared/components/Navbar";
-import { PageTitle } from "@/shared/components/PageTitle";
-import { Footer } from "@/shared/components/Footer";
 import { Wrapper } from "@/shared/components/Wrapper";
+import { PageTitle } from "@/shared/components/PageTitle";
+import { SectionTitle } from "@/shared/components/SectionTitle";
+import { Footer } from "@/shared/components/Footer";
+
 import classNames from "classnames/bind";
 
 import Image from "next/image";
@@ -10,7 +12,6 @@ import Image from "next/image";
 import img1 from "@/app/assets/images/about/1.jpeg";
 import img2 from "@/app/assets/images/about/2.jpg";
 import img3 from "@/app/assets/images/about/3.jpeg";
-import { SectionTitle } from "@/shared/components/SectionTitle";
 
 const cx = classNames.bind(styles);
 

@@ -1,0 +1,35 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--blue-dark);
+}
+
+.input {
+  border-radius: 0.25rem;
+  border: 1px solid var(--blue-light);
+  height: 2.875rem;
+  padding-inline: 0.75rem;
+  color: var(--blue-dark);
+  &:focus {
+    outline-color: var(--blue-dark);
+  }
+}
+
+.helper-text {
+  font-size: 0.75rem;
+  color: var(--blue-dark);
+
+  &.non-selectable {
+    user-select: none;
+  }
+
+  &.error {
+    color: var(--red);
+  }
+}

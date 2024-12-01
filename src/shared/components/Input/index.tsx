@@ -21,7 +21,7 @@ export const Input = ({ className, error, helperText, label, inputClassName, ...
         <div
           className={cx("helper-text", {
             error,
-            "select-none": !helperText.trim(),
+            "non-selectable": !helperText.trim(),
           })}
         >
           {helperText.trim() ? helperText : <>&nbsp;</>}

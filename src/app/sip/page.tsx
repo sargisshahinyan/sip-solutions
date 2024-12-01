@@ -99,22 +99,20 @@ export default function Home() {
       </section>
 
       <section className={styles["achievements-section"]}>
-        <Wrapper>
-          <div className={cx("flex-spb-c", "achievements-section-content")}>
-            <div className={styles["achievements-section-content__item"]}>
-              <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
-              <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
-            </div>
-            <div className={styles["achievements-section-content__line"]}></div>
-            <div className={styles["achievements-section-content__item"]}>
-              <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
-              <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
-            </div>
-            <div className={styles["achievements-section-content__line"]}></div>
-            <div className={styles["achievements-section-content__item"]}>
-              <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
-              <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>
-            </div>
+        <Wrapper className={cx("flex-spb-c", "achievements-section-content")}>
+          <div className={styles["achievements-section-content__item"]}>
+            <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
+            <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
+          </div>
+          <div className={styles["achievements-section-content__line"]}></div>
+          <div className={styles["achievements-section-content__item"]}>
+            <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
+            <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
+          </div>
+          <div className={styles["achievements-section-content__line"]}></div>
+          <div className={styles["achievements-section-content__item"]}>
+            <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
+            <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>
           </div>
         </Wrapper>
       </section>
@@ -150,135 +148,118 @@ export default function Home() {
         <div className={styles["sip-vector-bottom-blue"]}>
           <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
         </div>
-        <Wrapper>
-          <div className={cx("flex-spb", "contacts-section-content")}>
-            <div className={cx("flex-col-spb", "contacts-section-content__info")}>
-              <div>
-                <SectionTitle className={cx("contacts-section-content__info-title")}>Lorem ipsum dolor</SectionTitle>
-                <p className={styles["contacts-section-content__info-subtitle"]}>
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
+        <Wrapper className={cx("flex-spb", "contacts-section-content")}>
+          <div className={cx("flex-col-spb", "contacts-section-content__info")}>
+            <div>
+              <SectionTitle className={cx("contacts-section-content__info-title")}>Lorem ipsum dolor</SectionTitle>
+              <p className={styles["contacts-section-content__info-subtitle"]}>
+                Lorem ipsum dolor sit amet consectetur.
+              </p>
+            </div>
+            <div>
+              <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                <Image
+                  className={styles["contacts-section-content__info-contact__icon"]}
+                  src={phoneIcon}
+                  alt="phoneIcon"
+                />
+                <a className={styles["contacts-section-content__info-contact__link"]} href="tel:+17473328603">
+                  +17473328603
+                </a>
               </div>
-              <div>
-                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
-                  <Image
-                    className={styles["contacts-section-content__info-contact__icon"]}
-                    src={phoneIcon}
-                    alt="phoneIcon"
-                  />
-                  <a className={styles["contacts-section-content__info-contact__link"]} href="tel:+17473328603">
-                    +17473328603
-                  </a>
-                </div>
 
-                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
-                  <Image
-                    className={styles["contacts-section-content__info-contact__icon"]}
-                    src={mailIcon}
-                    alt="mailIcon"
-                  />
-                  <a
-                    className={styles["contacts-section-content__info-contact__link"]}
-                    href="sipsolutionsip@outlook.com"
-                  >
-                    sipsolutionsip@outlook.com
-                  </a>
-                </div>
-
-                <div className={cx("flex-c", "contacts-section-content__info-contact")}>
-                  <Image
-                    className={styles["contacts-section-content__info-contact__icon"]}
-                    src={addressIcon}
-                    alt="addressIcon"
-                  />
-                  <span className={styles["contacts-section-content__info-contact__text"]}>
-                    1319 Stanley avenue, Glendale, CA, United States
-                  </span>
-                </div>
+              <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                <Image
+                  className={styles["contacts-section-content__info-contact__icon"]}
+                  src={mailIcon}
+                  alt="mailIcon"
+                />
+                <a className={styles["contacts-section-content__info-contact__link"]} href="sipsolutionsip@outlook.com">
+                  sipsolutionsip@outlook.com
+                </a>
               </div>
-              <div>
-                <div className={cx("flex-c", "contacts-section-content__info-social")}>
-                  <Link href={"/"}>
-                    <Image
-                      className={styles["contacts-section-content__info-social__icon"]}
-                      src={fbIcon}
-                      alt="fbIcon"
-                    />
-                  </Link>
-                  <Link href={"/"}>
-                    <Image
-                      className={styles["contacts-section-content__info-social__icon"]}
-                      src={inIcon}
-                      alt="inIcon"
-                    />
-                  </Link>
-                  <Link href={"/"}>
-                    <Image
-                      className={styles["contacts-section-content__info-social__icon"]}
-                      src={ytIcon}
-                      alt="ytIcon"
-                    />
-                  </Link>
-                </div>
+
+              <div className={cx("flex-c", "contacts-section-content__info-contact")}>
+                <Image
+                  className={styles["contacts-section-content__info-contact__icon"]}
+                  src={addressIcon}
+                  alt="addressIcon"
+                />
+                <span className={styles["contacts-section-content__info-contact__text"]}>
+                  1319 Stanley avenue, Glendale, CA, United States
+                </span>
               </div>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles["contacts-section-content__form"]}>
-              <Input
-                label="Your Name"
-                error={!!errors.name}
-                helperText={errors.name?.message || " "}
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Name is required",
-                  },
-                  minLength: {
-                    value: 2,
-                    message: "Min. 2 symbols",
-                  },
-                  maxLength: {
-                    value: 50,
-                    message: "Max. 50 symbols",
-                  },
-                  pattern: {
-                    value: /^[A-Za-z .`'/-]{2,50}$/,
-                    message: "Only letters, spaces, and special characters are allowed.",
-                  },
-                })}
-              />
-              <Input
-                label="Email Address"
-                type="email"
-                error={!!errors.email}
-                helperText={errors.email?.message || " "}
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: "Email is required",
-                  },
-                  validate: {
-                    matchPattern: (v) => isEmail(v) || "Incorrect email format",
-                  },
-                })}
-              />
-              <Textarea
-                label="Message"
-                error={!!errors.message}
-                helperText={errors.message?.message || " "}
-                {...register("message", {
-                  required: {
-                    value: true,
-                    message: "Message required",
-                  },
-                  minLength: {
-                    value: 2,
-                    message: "Min. 2 symbols",
-                  },
-                })}
-              />
-              <Button type="submit">Submit</Button>
-            </form>
+            <div>
+              <div className={cx("flex-c", "contacts-section-content__info-social")}>
+                <a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=61558992350036">
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={fbIcon} alt="fbIcon" />
+                </a>
+                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/sipsolutionsip">
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={inIcon} alt="inIcon" />
+                </a>
+                <a target="_blank" rel="noreferrer" href="https://youtube.com/@howtomakeitsip">
+                  <Image className={styles["contacts-section-content__info-social__icon"]} src={ytIcon} alt="ytIcon" />
+                </a>
+              </div>
+            </div>
           </div>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles["contacts-section-content__form"]}>
+            <Input
+              label="Your Name"
+              error={!!errors.name}
+              helperText={errors.name?.message || " "}
+              {...register("name", {
+                required: {
+                  value: true,
+                  message: "Name is required",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Min. 2 symbols",
+                },
+                maxLength: {
+                  value: 50,
+                  message: "Max. 50 symbols",
+                },
+                pattern: {
+                  value: /^[A-Za-z .`'/-]{2,50}$/,
+                  message: "Only letters, spaces, and special characters are allowed.",
+                },
+              })}
+            />
+            <Input
+              label="Email Address"
+              type="email"
+              error={!!errors.email}
+              helperText={errors.email?.message || " "}
+              {...register("email", {
+                required: {
+                  value: true,
+                  message: "Email is required",
+                },
+                validate: {
+                  matchPattern: (v) => isEmail(v) || "Incorrect email format",
+                },
+              })}
+            />
+            <Textarea
+              label="Message"
+              error={!!errors.message}
+              helperText={errors.message?.message || " "}
+              {...register("message", {
+                required: {
+                  value: true,
+                  message: "Message required",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Min. 2 symbols",
+                },
+              })}
+            />
+            <Button type="submit">Submit</Button>
+          </form>
         </Wrapper>
       </section>
 

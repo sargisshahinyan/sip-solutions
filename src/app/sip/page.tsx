@@ -43,12 +43,23 @@ export default function Home() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactInput>({
     shouldFocusError: true,
   });
 
-  const onSubmit: SubmitHandler<ContactInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<ContactInput> = async (data) => {
+    await fetch("/api/sip/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then(() => {
+      reset();
+    });
+  };
 
   return (
     <>
@@ -119,13 +130,13 @@ export default function Home() {
           <div className={styles["images-carousel"]}>
             {galleryImages.slice(0, 14).map((image, index) => (
               <div key={index} className={cx("images-carousel__item")} onClick={() => setClickedElement(image)}>
-                <Image src={image} alt="" objectFit="cover" />
+                <Image src={image} alt="" />
               </div>
             ))}
 
             {galleryImages.slice(0, 14).map((image, index) => (
               <div key={index} className={cx("images-carousel__item")} onClick={() => setClickedElement(image)}>
-                <Image src={image} alt="" objectFit="cover" />
+                <Image src={image} alt="" />
               </div>
             ))}
           </div>

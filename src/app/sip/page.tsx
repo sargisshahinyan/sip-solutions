@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import classNames from "classnames/bind";

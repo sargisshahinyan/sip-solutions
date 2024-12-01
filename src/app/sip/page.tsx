@@ -191,7 +191,9 @@ export default function Home() {
                     src={addressIcon}
                     alt="addressIcon"
                   />
-                  <span className={styles["contacts-section-content__info-contact__text"]}>Your address 123</span>
+                  <span className={styles["contacts-section-content__info-contact__text"]}>
+                    1319 Stanley avenue, Glendale, CA, United States
+                  </span>
                 </div>
               </div>
               <div>

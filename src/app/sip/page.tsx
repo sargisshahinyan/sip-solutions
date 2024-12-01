@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import classNames from "classnames/bind";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import { Navbar } from "@/shared/components/Navbar";
 import { Footer } from "@/shared/components/Footer";
@@ -17,6 +18,8 @@ import { Textarea } from "@/shared/components/Textarea";
 
 import { galleryImages } from "@/shared/data/galleryImages";
 
+import { isEmail } from "@/shared/helpers/isEmail";
+
 import phoneIcon from "../assets/icons/phone-icon.svg";
 import mailIcon from "../assets/icons/mail-icon.svg";
 import addressIcon from "../assets/icons/address-icon.svg";
@@ -29,8 +32,23 @@ import styles from "./styles.module.scss";
 
 const cx = classNames.bind(styles);
 
+interface ContactInput {
+  name: string;
+  email: string;
+  message: string;
+}
+
 export default function Home() {
   const [clickedElement, setClickedElement] = useState<undefined | StaticImageData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactInput>({
+    shouldFocusError: true,
+  });
+
+  const onSubmit: SubmitHandler<ContactInput> = (data) => console.log(data);
 
   return (
     <>
@@ -191,10 +209,60 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <form className={styles["contacts-section-content__form"]}>
-              <Input label="Your Name" />
-              <Input label="Email Address" type="email" />
-              <Textarea label="Message" />
+            <form onSubmit={handleSubmit(onSubmit)} className={styles["contacts-section-content__form"]}>
+              <Input
+                label="Your Name"
+                error={!!errors.name}
+                helperText={errors.name?.message || " "}
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is required",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "Min. 2 symbols",
+                  },
+                  maxLength: {
+                    value: 50,
+                    message: "Max. 50 symbols",
+                  },
+                  pattern: {
+                    value: /^[A-Za-z .`'/-]{2,50}$/,
+                    message: "Only letters, spaces, and special characters are allowed.",
+                  },
+                })}
+              />
+              <Input
+                label="Email Address"
+                type="email"
+                error={!!errors.email}
+                helperText={errors.email?.message || " "}
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is required",
+                  },
+                  validate: {
+                    matchPattern: (v) => isEmail(v) || "Incorrect email format",
+                  },
+                })}
+              />
+              <Textarea
+                label="Message"
+                error={!!errors.message}
+                helperText={errors.message?.message || " "}
+                {...register("message", {
+                  required: {
+                    value: true,
+                    message: "Message required",
+                  },
+                  minLength: {
+                    value: 2,
+                    message: "Min. 2 symbols",
+                  },
+                })}
+              />
               <Button type="submit">Submit</Button>
             </form>
           </div>

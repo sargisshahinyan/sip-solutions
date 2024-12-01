@@ -1,0 +1,36 @@
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--blue-dark);
+}
+
+.textarea {
+  border-radius: 0.25rem;
+  border: 1px solid var(--blue-light);
+  height: 8.25rem;
+  padding-inline: 0.75rem;
+  color: var(--blue-dark);
+  resize: none;
+  &:focus {
+    outline-color: var(--blue-dark);
+  }
+}
+
+.helper-text {
+  font-size: 0.75rem;
+  color: var(--blue-dark);
+
+  &.non-selectable {
+    user-select: none;
+  }
+
+  &.error {
+    color: var(--red);
+  }
+}

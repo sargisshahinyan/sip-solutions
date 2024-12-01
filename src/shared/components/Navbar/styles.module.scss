@@ -4,6 +4,8 @@
 
   &:not(.transparent) {
     background-color: var(--blue-dark);
+    max-height: 7.25rem;
+    overflow: hidden;
   }
 
   .logo {

@@ -1,24 +1,24 @@
+import Link from "next/link";
+import Image from "next/image";
 import classNames from "classnames/bind";
+
 import { Button } from "@/shared/components/Button";
 
-import Image from "next/image";
 import logo from "../../../app/assets/images/logo.png";
-
-import Link from "next/link";
 
 import styles from "./styles.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const Navbar = ({ className = "", isTransparent = true }: { className?: string; isTransparent?: boolean }) => {
+export const Navbar = ({ className = "", isTransparent = false }: { className?: string; isTransparent?: boolean }) => {
   return (
     <div
       className={cx("navbar", "flex-spb-c", className, {
-        transparent: !isTransparent,
+        transparent: isTransparent,
       })}
     >
       <div className={styles["logo"]}>
-        <Link className={styles["logo-link"]} href="/">
+        <Link className={styles["logo-link"]} href="/sip">
           <Image className={styles["logo-img"]} src={logo} alt="logo" />
         </Link>
       </div>

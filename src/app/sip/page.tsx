@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import classNames from "classnames/bind";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useInView } from "react-intersection-observer";
 
 import { Navbar } from "@/shared/components/Navbar";
 import { Footer } from "@/shared/components/Footer";
@@ -39,6 +40,9 @@ interface ContactInput {
 
 export default function Home() {
   const [clickedElement, setClickedElement] = useState<undefined | StaticImageData>();
+  const { ref, inView } = useInView({
+    initialInView: true,
+  });
   const {
     register,
     handleSubmit,
@@ -62,6 +66,8 @@ export default function Home() {
 
   return (
     <>
+      <Navbar className={cx("sticky-navbar", { visible: !inView })} />
+
       {clickedElement && (
         <ImageGallery
           images={galleryImages}
@@ -70,9 +76,9 @@ export default function Home() {
         />
       )}
 
-      <section className={styles["top-section"]}>
+      <section className={styles["top-section"]} ref={ref}>
         <div className={styles["top-section__inner-content"]}>
-          <Navbar isTransparent={false} />
+          <Navbar isTransparent />
           <div className={cx("flex-col-c", "top-section__inner-content__info")}>
             <SectionTitle className={cx("top-section-title")}>Lorem ipsum dolor</SectionTitle>
             <p className={styles["top-section-text"]}>

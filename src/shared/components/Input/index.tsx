@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, useRef } from "react";
 import classNames from "classnames/bind";
 
 import styles from "./styles.module.scss";
@@ -12,11 +12,17 @@ interface InputProps extends ComponentProps<"input"> {
   inputClassName?: string;
 }
 
-export const Input = ({ className, error, helperText, label, inputClassName, ...props }: InputProps) => {
+export const Input = ({ className, error, helperText, label, inputClassName, id, ...props }: InputProps) => {
+  const { current: idValue } = useRef(id ?? Math.random().toString(36).substring(7));
+
   return (
     <div className={cx("input-wrapper", className)}>
-      {label && <label className={styles.label}>{label}</label>}
-      <input className={cx("input", inputClassName)} {...props} />
+      {label && (
+        <label htmlFor={idValue} className={styles.label}>
+          {label}
+        </label>
+      )}
+      <input id={idValue} className={cx("input", inputClassName)} {...props} />
       {helperText && (
         <div
           className={cx("helper-text", {

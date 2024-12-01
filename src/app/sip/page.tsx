@@ -11,6 +11,9 @@ import { PageTitle } from "@/shared/components/PageTitle";
 import { SectionTitle } from "@/shared/components/SectionTitle";
 import { Button } from "@/shared/components/Button";
 import { Wrapper } from "@/shared/components/Wrapper";
+import { ImageGallery } from "@/shared/components/SliderCarousel";
+import { Input } from "@/shared/components/Input";
+import { Textarea } from "@/shared/components/Textarea";
 
 import { galleryImages } from "@/shared/data/galleryImages";
 
@@ -23,7 +26,6 @@ import ytIcon from "../assets/icons/yt-icon.svg";
 import sipVector from "../assets/images/sip-vector.svg";
 
 import styles from "./styles.module.scss";
-import { ImageGallery } from "@/shared/components/SliderCarousel";
 
 const cx = classNames.bind(styles);
 
@@ -189,7 +191,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className={styles["contacts-section-content__form"]}></div>
+            <form className={styles["contacts-section-content__form"]}>
+              <Input label="Your Name" />
+              <Input label="Email Address" type="email" />
+              <Textarea label="Message" />
+              <Button type="submit">Submit</Button>
+            </form>
           </div>
         </Wrapper>
       </section>

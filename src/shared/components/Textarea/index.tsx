@@ -12,11 +12,15 @@ interface TextareaProps extends ComponentProps<"textarea"> {
   textareaClassName?: string;
 }
 
-export const Textarea = ({ className, error, helperText, label, textareaClassName, ...props }: TextareaProps) => {
+export const Textarea = ({ className, error, helperText, label, textareaClassName, id, ...props }: TextareaProps) => {
   return (
     <div className={cx("textarea-wrapper", className)}>
-      {label && <label className={styles.label}>{label}</label>}
-      <textarea className={cx("textarea", textareaClassName)} {...props} />
+      {label && (
+        <label className={styles.label} htmlFor={id}>
+          {label}
+        </label>
+      )}
+      <textarea className={cx("textarea", textareaClassName)} id={id} {...props} />
       {helperText && (
         <div
           className={cx("helper-text", {

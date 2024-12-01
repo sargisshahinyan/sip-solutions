@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import type { Metadata } from "next";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import "./generals.scss";
 
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

@@ -42,13 +42,13 @@
         order: 2;
         flex: 1;
 
-        &-title {
-          text-align: left !important;
+        & &-title {
+          text-align: left;
         }
 
-        &-sub-title {
+        & &-sub-title {
           margin-top: 0.25rem;
-          text-align: left !important;
+          text-align: left;
         }
 
         &-list {

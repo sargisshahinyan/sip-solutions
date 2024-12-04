@@ -5,8 +5,7 @@
   background: var(--blue-dark);
 
   &-text {
-    font-size: 19px;
-    line-height: 1;
+    line-height: 1.17;
     color: var(--white);
   }
 
@@ -27,6 +26,12 @@
 
     #{$this}-social {
       gap: 24px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &-text {
+      font-size: 15px;
     }
   }
 }

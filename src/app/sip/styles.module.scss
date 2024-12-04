@@ -49,9 +49,9 @@
     }
   }
 
-  &-title {
-    font-size: 48px !important;
-    color: var(--white) !important;
+  & &-title {
+    font-size: 48px;
+    color: var(--white);
   }
 
   &-text {
@@ -72,8 +72,8 @@
       }
     }
 
-    &-title {
-      font-weight: 500 !important;
+    & &-title {
+      font-weight: 500;
     }
 
     &-text {
@@ -100,9 +100,9 @@
       }
     }
 
-    &-title {
-      font-size: 36px !important;
-      font-weight: 700 !important;
+    & &-title {
+      font-size: 36px;
+      font-weight: 700;
     }
 
     &-text {
@@ -122,7 +122,7 @@
     gap: 16px;
 
     &__text {
-      font-size: 18px !important;
+      font-size: 18px;
       text-align: center;
     }
   }
@@ -131,16 +131,16 @@
     padding-bottom: 72px;
 
     &-content {
-      &__title {
-        font-size: 38px !important;
+      & &__title {
+        font-size: 38px;
       }
     }
   }
 
   @media (max-width: 767px) {
     &-content {
-      &__title {
-        font-size: 30px !important;
+      & &__title {
+        font-size: 30px;
       }
     }
   }
@@ -218,8 +218,8 @@
   position: relative;
   overflow: hidden;
 
-  &-title {
-    font-size: 38px !important;
+  & &-title {
+    font-size: 38px;
   }
 
   .sip-vector-bottom-white {
@@ -281,8 +281,8 @@
   }
 
   @media (max-width: 767px) {
-    &-title {
-      font-size: 30px !important;
+    & &-title {
+      font-size: 30px;
     }
 
     .images-carousel-wrapper {
@@ -317,11 +317,11 @@
     &__info {
       gap: 24px;
 
-      &-title {
+      & &-title {
         margin-top: 16px;
-        font-size: 38px !important;
-        color: var(--white) !important;
-        text-align: left !important;
+        font-size: 38px;
+        color: var(--white);
+        text-align: left;
       }
 
       &-subtitle {
@@ -438,8 +438,8 @@
         gap: 56px;
         padding-left: 0;
 
-        &-title {
-          font-size: 30px !important;
+        & &-title {
+          font-size: 30px;
         }
 
         &-subtitle {

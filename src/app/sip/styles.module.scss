@@ -147,12 +147,29 @@
 }
 
 .achievements-section {
-  background: var(--blue-light) url("/bg-achievements.png") no-repeat center center;
-  background-size: cover;
+  background: var(--blue-light);
   height: 209px;
   display: flex;
   align-items: center;
   margin-bottom: 110px;
+  position: relative;
+  overflow: hidden;
+
+  &-wrapper {
+    z-index: 1;
+  }
+
+  .sip-vector-top-blue {
+    position: absolute;
+    top: -229px;
+    right: -255px;
+  }
+
+  .sip-vector-bottom-blue {
+    position: absolute;
+    left: -152px;
+    bottom: -163px;
+  }
 
   &-content {
     width: 1016px;
@@ -192,6 +209,20 @@
     height: 159px;
     margin-bottom: 72px;
 
+    .sip-vector-top-blue {
+      width: 286px;
+      height: 213px;
+      top: -111px;
+      right: -130px;
+    }
+
+    .sip-vector-bottom-blue {
+      width: 286px;
+      height: 213px;
+      left: -112px;
+      bottom: -101px;
+    }
+
     &-content {
       width: 688px;
     }
@@ -199,6 +230,16 @@
 
   @media (max-width: 767px) {
     height: auto;
+
+    .sip-vector-top-blue {
+      top: -70px;
+      right: -163px;
+    }
+
+    .sip-vector-bottom-blue {
+      left: -187px;
+      bottom: -40px;
+    }
 
     &-content {
       width: auto;
@@ -430,6 +471,16 @@
   }
 
   @media (max-width: 767px) {
+    .sip-vector-top-blue {
+      top: -55px;
+      right: -263px;
+    }
+
+    .sip-vector-bottom-blue {
+      left: -136px;
+      bottom: -90px;
+    }
+
     &-content {
       padding: 56px 0;
       gap: 48px;

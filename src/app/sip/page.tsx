@@ -104,10 +104,16 @@ export default function Home() {
       </section>
 
       <section className={styles["achievements-section"]}>
-        <Wrapper>
+        <div className={styles["sip-vector-top-blue"]}>
+          <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
+        </div>
+        <div className={styles["sip-vector-bottom-blue"]}>
+          <Image className={styles["sip-vector-img"]} src={sipVector} alt="sipVector" />
+        </div>
+        <Wrapper className={styles["achievements-section-wrapper"]}>
           <div className={cx("flex-spb-c", "achievements-section-content")}>
             <div className={styles["achievements-section-content__item"]}>
-              <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
+              <div className={styles["achievements-section-content__item-quantity"]}>13+</div>
               <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
             </div>
             <div className={styles["achievements-section-content__line"]}></div>

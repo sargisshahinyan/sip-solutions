@@ -28,4 +28,10 @@
       gap: 24px;
     }
   }
+
+  @media (max-width: 767px) {
+    &-text {
+      font-size: 15px;
+    }
+  }
 }

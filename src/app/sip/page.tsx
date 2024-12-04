@@ -82,7 +82,7 @@ export default function Home() {
           <div className={cx("flex-col-c", "top-section__inner-content__info")}>
             <SectionTitle className={cx("top-section-title")}>Lorem ipsum dolor</SectionTitle>
             <p className={styles["top-section-text"]}>
-              Lorem ipsum dolor sit amet consectetur. Dui in dolor in vitae. Viverra pulvinar ornare
+              Lorem ipsum dolor sit amet consectetur. Dui in dolor in vitae. Viverra pulvinar ornare &nbsp;
               <br />
               sapien pulvinar cursus sit. Diam fames vulputat.
             </p>
@@ -104,20 +104,22 @@ export default function Home() {
       </section>
 
       <section className={styles["achievements-section"]}>
-        <Wrapper className={cx("flex-spb-c", "achievements-section-content")}>
-          <div className={styles["achievements-section-content__item"]}>
-            <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
-            <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
-          </div>
-          <div className={styles["achievements-section-content__line"]}></div>
-          <div className={styles["achievements-section-content__item"]}>
-            <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
-            <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
-          </div>
-          <div className={styles["achievements-section-content__line"]}></div>
-          <div className={styles["achievements-section-content__item"]}>
-            <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
-            <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>
+        <Wrapper>
+          <div className={cx("flex-spb-c", "achievements-section-content")}>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>35+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Years in business</div>
+            </div>
+            <div className={styles["achievements-section-content__line"]}></div>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>285+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Events thrown</div>
+            </div>
+            <div className={styles["achievements-section-content__line"]}></div>
+            <div className={styles["achievements-section-content__item"]}>
+              <div className={styles["achievements-section-content__item-quantity"]}>968+</div>
+              <div className={styles["achievements-section-content__item-description"]}>Coctails created</div>
+            </div>
           </div>
         </Wrapper>
       </section>

@@ -2,6 +2,8 @@ import { z } from "zod";
 
 import { sendEmail } from "@/shared/services/sendEmail";
 
+import { config } from "@/config";
+
 export async function POST(request: Request) {
   const body = await request.json();
 
@@ -14,7 +16,7 @@ export async function POST(request: Request) {
     .parse(body);
 
   await sendEmail({
-    to: email,
+    to: config.gmail.user,
     subject: "New message from SIP solutions website",
     html: `
       <h1>New message from SIP solutions website</h1>

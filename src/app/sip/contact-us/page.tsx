@@ -34,11 +34,11 @@ export default function ContactUsPage() {
                 <a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=61558992350036">
                   <Image className={styles.social_icon} src={fbIcon} alt="fbIcon" />
                 </a>
-                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/sipsolutionsip">
-                  <Image className={styles.social_icon} src={inIcon} alt="inIcon" />
-                </a>
                 <a target="_blank" rel="noreferrer" href="https://youtube.com/@howtomakeitsip">
                   <Image className={styles.social_icon} src={ytIcon} alt="ytIcon" />
+                </a>
+                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/sipsolutionsip">
+                  <Image className={styles.social_icon} src={inIcon} alt="inIcon" />
                 </a>
               </div>
             </div>

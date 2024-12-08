@@ -1,0 +1,52 @@
+.request-page {
+  margin: 0 auto;
+  padding: 5.875rem 0 6.375rem;
+  max-width: 37.5rem;
+
+  .form {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    .input {
+      flex: 1;
+
+      &.address {
+        flex: 2;
+        min-width: 18rem;
+      }
+    }
+  }
+
+  .question {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &_title {
+      color: var(--blue-dark);
+      font-size: 1rem;
+      line-height: 1.17;
+    }
+
+    &_option {
+      color: var(--blue-dark);
+      font-size: 1rem;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .submit-btn {
+    align-self: center;
+  }
+}

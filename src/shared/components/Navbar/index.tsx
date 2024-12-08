@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames/bind";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/shared/components/Button";
 
@@ -13,6 +16,8 @@ import styles from "./styles.module.scss";
 const cx = classNames.bind(styles);
 
 export const Navbar = ({ className = "", isTransparent = false }: { className?: string; isTransparent?: boolean }) => {
+  const { push } = useRouter();
+
   return (
     <header
       className={cx("navbar", "flex-spb-c", className, {
@@ -37,7 +42,9 @@ export const Navbar = ({ className = "", isTransparent = false }: { className?: 
           </ul>
         </nav>
         <div className={styles["menu-btn-content"]}>
-          <Button className={cx("menu-btn")}>Request</Button>
+          <Button onClick={() => push("/sip/request")} className={cx("menu-btn")}>
+            Request
+          </Button>
         </div>
       </div>
     </header>

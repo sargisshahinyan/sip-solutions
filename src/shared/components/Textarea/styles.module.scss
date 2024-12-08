@@ -22,6 +22,10 @@
   &:focus {
     outline-color: var(--blue-dark);
   }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .helper-text {

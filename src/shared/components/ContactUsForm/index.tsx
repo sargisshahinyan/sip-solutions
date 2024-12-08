@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import classNames from "classnames/bind";
 
-import { isEmail } from "@/shared/helpers/isEmail";
 import { Textarea } from "@/shared/components/Textarea";
 import { Button } from "@/shared/components/Button";
-
 import { Input } from "@/shared/components/Input";
+
+import { isEmail } from "@/shared/helpers/isEmail";
 
 import styles from "./styles.module.scss";
 

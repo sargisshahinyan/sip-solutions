@@ -160,7 +160,7 @@ export default function Home() {
                   />
                   <a
                     className={styles["contacts-section-content__info-contact__link"]}
-                    href="sipsolutionsip@outlook.com"
+                    href="mailto:sipsolutionsip@outlook.com"
                   >
                     sipsolutionsip@outlook.com
                   </a>

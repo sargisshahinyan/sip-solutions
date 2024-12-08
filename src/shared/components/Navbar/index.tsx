@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 export const Navbar = ({ className = "", isTransparent = false }: { className?: string; isTransparent?: boolean }) => {
   return (
-    <div
+    <header
       className={cx("navbar", "flex-spb-c", className, {
         transparent: isTransparent,
       })}
@@ -23,7 +23,7 @@ export const Navbar = ({ className = "", isTransparent = false }: { className?: 
         </Link>
       </div>
       <div className={cx("menu", "flex-spb-c")}>
-        <div className={cx("menu-items", "flex-spb-c")}>
+        <nav className={cx("menu-items", "flex-spb-c")}>
           <ul className={cx("menu-items__list", "flex-spb-c")}>
             <li className={cx("menu-items__list-item")}>
               <Link className={cx("menu-items__list-item-link")} href="/sip/about">
@@ -71,11 +71,11 @@ export const Navbar = ({ className = "", isTransparent = false }: { className?: 
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
         <div className={styles["menu-btn-content"]}>
           <Button className={cx("menu-btn")}>Request</Button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };

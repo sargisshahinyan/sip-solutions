@@ -19,7 +19,7 @@ export const Footer = ({
   showSocialIcons?: boolean;
 }) => {
   return (
-    <div className={cx("footer", "flex-spb-c", theme, { "with-social": showSocialIcons })}>
+    <footer className={cx("footer", "flex-spb-c", theme, { "with-social": showSocialIcons })}>
       <p className={styles["footer-text"]}>Copyright © 2024 Sip Solution - All Rights Reserved.</p>
       {showSocialIcons && (
         <div className={cx("flex-c", "footer-social")}>
@@ -34,6 +34,6 @@ export const Footer = ({
           </Link>
         </div>
       )}
-    </div>
+    </footer>
   );
 };

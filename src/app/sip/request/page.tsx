@@ -16,42 +16,44 @@ import { isEmail } from "@/shared/helpers/isEmail";
 import { isDate } from "@/shared/helpers/isDate";
 import { isTime } from "@/shared/helpers/isTime";
 
+import { RequestForm } from "@/shared/types/request-form";
+
 import styles from "./styles.module.scss";
 
 const cx = classNames.bind(styles);
-
-interface RequestInput {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  eventDate: string;
-  guestCount: number;
-  addressOfEvent: string;
-  startTime: string;
-  endTime: string;
-  preferredCocktails: Array<string>;
-  shouldBringPortableBar: string;
-  tipJar: string;
-  typeOfEvent: string;
-  typeOfEventCustom?: string;
-  additionalEntertainment: Array<string>;
-  additionalServices: Array<string>;
-  moreAboutEvent: string;
-}
 
 const RequestPage = () => {
   const {
     register,
     watch,
     handleSubmit,
+    reset,
     formState: { errors },
-  } = useForm<RequestInput>({
+  } = useForm<RequestForm>({
     shouldFocusError: true,
+    defaultValues: {
+      additionalServices: [],
+      additionalEntertainment: [],
+    },
   });
 
-  const onSubmit: SubmitHandler<RequestInput> = (data: RequestInput) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<RequestForm> = (data: RequestForm) => {
+    fetch("/api/sip/request", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...data,
+        startTime: `${data.startTime}:00`,
+        endTime: `${data.endTime}:00`,
+        guestCount: Number(data.guestCount),
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        reset();
+      }
+    });
   };
 
   return (

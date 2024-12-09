@@ -49,7 +49,6 @@ const RequestPage = () => {
   } = useForm<RequestInput>({
     shouldFocusError: true,
   });
-  console.log(errors);
 
   const onSubmit: SubmitHandler<RequestInput> = (data: RequestInput) => {
     console.log(data);
@@ -77,6 +76,8 @@ const RequestPage = () => {
                   message: "Max. 50 symbols",
                 },
               })}
+              error={!!errors.firstName}
+              helperText={errors.firstName?.message ?? " "}
               label="First Name"
               className={styles.input}
             />
@@ -95,6 +96,8 @@ const RequestPage = () => {
                   message: "Max. 50 symbols",
                 },
               })}
+              error={!!errors.lastName}
+              helperText={errors.lastName?.message ?? " "}
               label="Last Name"
               className={styles.input}
             />
@@ -110,6 +113,8 @@ const RequestPage = () => {
                   matchPattern: (v) => isEmail(v) || "Incorrect email format",
                 },
               })}
+              error={!!errors.email}
+              helperText={errors.email?.message ?? " "}
               label="Email"
               type="email"
               className={styles.input}
@@ -121,6 +126,8 @@ const RequestPage = () => {
                   message: "Phone is required",
                 },
               })}
+              error={!!errors.phone}
+              helperText={errors.phone?.message ?? " "}
               label="Phone"
               type="tel"
               className={styles.input}
@@ -134,9 +141,21 @@ const RequestPage = () => {
                   message: "Event date is required",
                 },
                 validate: {
-                  matchPattern: (v) => isDate(v) || "Incorrect date format",
+                  matchPattern: (v) => {
+                    if (!isDate(v)) {
+                      return "Incorrect date format";
+                    }
+
+                    if (new Date(`${v}T00:00:00Z`).getTime() < Date.now()) {
+                      return "Event date should be in the future";
+                    }
+
+                    return true;
+                  },
                 },
               })}
+              error={!!errors.eventDate}
+              helperText={errors.eventDate?.message ?? " "}
               label="Event date"
               type="date"
               className={styles.input}
@@ -152,6 +171,8 @@ const RequestPage = () => {
                   message: "Min. 1 guest",
                 },
               })}
+              error={!!errors.guestCount}
+              helperText={errors.guestCount?.message ?? " "}
               label="Estimated guest count"
               min={1}
               type="number"
@@ -170,6 +191,8 @@ const RequestPage = () => {
                   message: "Min. 2 symbols",
                 },
               })}
+              error={!!errors.addressOfEvent}
+              helperText={errors.addressOfEvent?.message ?? " "}
               label="Address of event"
               className={cx("input", "address")}
             />
@@ -183,6 +206,8 @@ const RequestPage = () => {
                   matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
                 },
               })}
+              error={!!errors.startTime}
+              helperText={errors.startTime?.message ?? " "}
               label="Start time"
               type="time"
               className={styles.input}
@@ -191,12 +216,14 @@ const RequestPage = () => {
               {...register("endTime", {
                 required: {
                   value: true,
-                  message: "Start time is required",
+                  message: "End time is required",
                 },
                 validate: {
                   matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
                 },
               })}
+              error={!!errors.endTime}
+              helperText={errors.endTime?.message ?? " "}
               label="End time"
               type="time"
               className={styles.input}
@@ -206,78 +233,179 @@ const RequestPage = () => {
           <div className={styles.question}>
             <div className={styles.question_title}>What kind of drinks you want?</div>
             <div className={styles.question_option}>
-              <Checkbox {...register("preferredCocktails")} id="cocktails" value="Cocktails" />
+              <Checkbox
+                {...register("preferredCocktails", {
+                  validate: {
+                    minSelected: (v) => v.length > 0 || "Please select at least one option",
+                  },
+                })}
+                id="cocktails"
+                value="Cocktails"
+              />
               <label htmlFor="cocktails">Cocktails</label>
             </div>
             <div className={styles.question_option}>
-              <Checkbox {...register("preferredCocktails")} id="mocktails" value="Mocktails" />
+              <Checkbox
+                {...register("preferredCocktails", {
+                  validate: {
+                    minSelected: (v) => v.length > 0 || "Please select at least one option",
+                  },
+                })}
+                id="mocktails"
+                value="Mocktails"
+              />
               <label htmlFor="mocktails">Mocktails</label>
             </div>
             <div className={styles.question_option}>
-              <Checkbox {...register("preferredCocktails")} id="soft-bar" value="Soft bar" />
+              <Checkbox
+                {...register("preferredCocktails", {
+                  validate: {
+                    minSelected: (v) => v.length > 0 || "Please select at least one option",
+                  },
+                })}
+                id="soft-bar"
+                value="Soft bar"
+              />
               <label htmlFor="soft-bar">Soft bar ( only beer, wine, juice, sodas )</label>
             </div>
+
+            {errors.preferredCocktails && (
+              <div className={styles.question_error}>{errors.preferredCocktails.message}</div>
+            )}
           </div>
 
           <div className={styles.question}>
             <div className={styles.question_title}>Does the bartender bring a portable bar?</div>
             <div className={styles.question_option}>
-              <Radio {...register("shouldBringPortableBar")} id="portable-bar-yes" value="Yes" />
+              <Radio
+                {...register("shouldBringPortableBar", {
+                  required: "Please select an option",
+                })}
+                id="portable-bar-yes"
+                value="Yes"
+              />
               <label htmlFor="portable-bar-yes">Yes</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("shouldBringPortableBar")} id="portable-bar-no" value="No" />
+              <Radio
+                {...register("shouldBringPortableBar", {
+                  required: "Please select an option",
+                })}
+                id="portable-bar-no"
+                value="No"
+              />
               <label htmlFor="portable-bar-no">No</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("shouldBringPortableBar")} id="portable-bar-not-sure" value="Not Sure" />
+              <Radio
+                {...register("shouldBringPortableBar", {
+                  required: "Please select an option",
+                })}
+                id="portable-bar-not-sure"
+                value="Not Sure"
+              />
               <label htmlFor="portable-bar-not-sure">Not Sure</label>
             </div>
+
+            {errors.shouldBringPortableBar && (
+              <div className={styles.question_error}>{errors.shouldBringPortableBar.message}</div>
+            )}
           </div>
 
           <div className={styles.question}>
             <div className={styles.question_title}>Tip jar / QR code?</div>
             <div className={styles.question_option}>
-              <Radio {...register("tipJar")} id="tip-jar-yes" value="Yes" />
+              <Radio
+                {...register("tipJar", {
+                  required: "Please select an option",
+                })}
+                id="tip-jar-yes"
+                value="Yes"
+              />
               <label htmlFor="tip-jar-yes">Yes</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("tipJar")} id="tip-jar-no" value="No" />
+              <Radio
+                {...register("tipJar", {
+                  required: "Please select an option",
+                })}
+                id="tip-jar-no"
+                value="No"
+              />
               <label htmlFor="tip-jar-no">No</label>
             </div>
+
+            {errors.tipJar && <div className={styles.question_error}>{errors.tipJar.message}</div>}
           </div>
 
           <div className={styles.question}>
             <div className={styles.question_title}>What a type of your event?</div>
+
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="wedding" value="Wedding" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="wedding"
+                value="Wedding"
+              />
               <label htmlFor="wedding">Wedding</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="birthday" value="Birthday" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="birthday"
+                value="Birthday"
+              />
               <label htmlFor="birthday">Birthday</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="anniversary" value="Anniversary" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="anniversary"
+                value="Anniversary"
+              />
               <label htmlFor="anniversary">Anniversary</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="corporate-event" value="Corporate event" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="corporate-event"
+                value="Corporate event"
+              />
               <label htmlFor="corporate-event">Corporate event</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="home-party" value="Home party" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="home-party"
+                value="Home party"
+              />
               <label htmlFor="home-party">Home party</label>
             </div>
             <div className={styles.question_option}>
-              <Radio {...register("typeOfEvent")} id="your-answer" value="your-answer" />
+              <Radio
+                {...register("typeOfEvent", {
+                  required: "Please select an option",
+                })}
+                id="your-answer"
+                value="your-answer"
+              />
               <label htmlFor="your-answer">Your answer</label>
             </div>
             <Textarea
               {...register("typeOfEventCustom", {
                 required: {
-                  value: true,
-                  message: "Type of event is required",
+                  value: watch("typeOfEvent") === "your-answer",
+                  message: "Please write your answer",
                 },
                 minLength: {
                   value: 2,
@@ -289,6 +417,12 @@ const RequestPage = () => {
               resizable
               textareaClassName={styles["custom-answer-box"]}
             />
+
+            {(errors.typeOfEvent || errors.typeOfEventCustom) && (
+              <div className={styles.question_error}>
+                {errors.typeOfEvent?.message ?? errors.typeOfEventCustom?.message}
+              </div>
+            )}
           </div>
 
           <div className={styles.question}>

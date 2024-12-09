@@ -17,11 +17,6 @@
 
     .input {
       flex: 1;
-
-      &.address {
-        flex: 2;
-        min-width: 18rem;
-      }
     }
   }
 
@@ -64,5 +59,22 @@
   .custom-answer-box {
     width: 18rem;
     height: 3rem;
+  }
+
+  @media (max-width: 767px) {
+    padding: 4.5rem 1rem;
+
+    .form {
+      margin-top: 1rem;
+    }
+
+    .input-group:not(.time) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .custom-answer-box {
+      width: 100%;
+    }
   }
 }

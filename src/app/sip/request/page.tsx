@@ -194,40 +194,42 @@ const RequestPage = () => {
               error={!!errors.addressOfEvent}
               helperText={errors.addressOfEvent?.message ?? " "}
               label="Address of event"
-              className={cx("input", "address")}
-            />
-            <Input
-              {...register("startTime", {
-                required: {
-                  value: true,
-                  message: "Start time is required",
-                },
-                validate: {
-                  matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
-                },
-              })}
-              error={!!errors.startTime}
-              helperText={errors.startTime?.message ?? " "}
-              label="Start time"
-              type="time"
               className={styles.input}
             />
-            <Input
-              {...register("endTime", {
-                required: {
-                  value: true,
-                  message: "End time is required",
-                },
-                validate: {
-                  matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
-                },
-              })}
-              error={!!errors.endTime}
-              helperText={errors.endTime?.message ?? " "}
-              label="End time"
-              type="time"
-              className={styles.input}
-            />
+            <div className={cx("input-group", "time")}>
+              <Input
+                {...register("startTime", {
+                  required: {
+                    value: true,
+                    message: "Start time is required",
+                  },
+                  validate: {
+                    matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
+                  },
+                })}
+                error={!!errors.startTime}
+                helperText={errors.startTime?.message ?? " "}
+                label="Start time"
+                type="time"
+                className={cx("input", "time")}
+              />
+              <Input
+                {...register("endTime", {
+                  required: {
+                    value: true,
+                    message: "End time is required",
+                  },
+                  validate: {
+                    matchPattern: (v) => isTime(`${v}:00`) || "Incorrect time format",
+                  },
+                })}
+                error={!!errors.endTime}
+                helperText={errors.endTime?.message ?? " "}
+                label="End time"
+                type="time"
+                className={cx("input", "time")}
+              />
+            </div>
           </div>
 
           <div className={styles.question}>

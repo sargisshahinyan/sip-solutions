@@ -10,9 +10,19 @@ interface TextareaProps extends ComponentProps<"textarea"> {
   helperText?: string;
   label?: string;
   textareaClassName?: string;
+  resizable?: boolean;
 }
 
-export const Textarea = ({ className, error, helperText, label, textareaClassName, id, ...props }: TextareaProps) => {
+export const Textarea = ({
+  className,
+  error,
+  helperText,
+  label,
+  textareaClassName,
+  id,
+  resizable,
+  ...props
+}: TextareaProps) => {
   return (
     <div className={cx("textarea-wrapper", className)}>
       {label && (
@@ -20,7 +30,7 @@ export const Textarea = ({ className, error, helperText, label, textareaClassNam
           {label}
         </label>
       )}
-      <textarea className={cx("textarea", textareaClassName)} id={id} {...props} />
+      <textarea className={cx("textarea", textareaClassName, { resizable })} id={id} {...props} />
       {helperText && (
         <div
           className={cx("helper-text", {

@@ -18,6 +18,13 @@
   padding-inline: 0.75rem;
   color: var(--blue-dark);
   background-color: transparent;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   &:focus {
     outline-color: var(--blue-dark);
   }

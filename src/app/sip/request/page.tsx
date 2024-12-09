@@ -9,14 +9,14 @@ import { Footer } from "@/shared/components/Footer";
 import { Input } from "@/shared/components/Input";
 import { Checkbox } from "@/shared/components/Checkbox";
 import { Button } from "@/shared/components/Button";
+import { Radio } from "@/shared/components/Radio";
+import { Textarea } from "@/shared/components/Textarea";
 
 import { isEmail } from "@/shared/helpers/isEmail";
 import { isDate } from "@/shared/helpers/isDate";
 import { isTime } from "@/shared/helpers/isTime";
 
 import styles from "./styles.module.scss";
-import { Radio } from "@/shared/components/Radio";
-import { Textarea } from "@/shared/components/Textarea";
 
 const cx = classNames.bind(styles);
 
@@ -286,6 +286,8 @@ const RequestPage = () => {
                 disabled: watch("typeOfEvent") !== "your-answer",
               })}
               placeholder="Write your answer"
+              resizable
+              textareaClassName={styles["custom-answer-box"]}
             />
           </div>
 
@@ -347,7 +349,7 @@ const RequestPage = () => {
 
           <div className={styles.question}>
             <div className={styles.question_title}>Tell us more about your event</div>
-            <Textarea />
+            <Textarea {...register("moreAboutEvent")} textareaClassName={styles["custom-answer-box"]} resizable />
           </div>
 
           <Button type="submit" className={styles["submit-btn"]}>

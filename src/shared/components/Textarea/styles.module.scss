@@ -17,14 +17,19 @@
   height: 8.25rem;
   padding: 0.75rem;
   color: var(--blue-dark);
-  resize: none;
   background-color: transparent;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+  }
   &:focus {
     outline-color: var(--blue-dark);
   }
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+  &:not(.resizable) {
+    resize: none;
   }
 }
 

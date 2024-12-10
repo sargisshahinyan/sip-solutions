@@ -41,12 +41,31 @@
 
 .arrow-button {
   background: transparent;
-  border: 0;
   cursor: pointer;
-  min-width: 2rem;
 }
 
 .arrow {
+  font-size: 3rem;
+  color: white;
+  opacity: 0.5;
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.close-button {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.close {
   font-size: 3rem;
   color: white;
   opacity: 0.5;

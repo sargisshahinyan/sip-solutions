@@ -30,6 +30,11 @@ p {
   align-items: center;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-col-c {
   display: flex;
   flex-direction: column;

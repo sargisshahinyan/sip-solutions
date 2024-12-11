@@ -1,6 +1,6 @@
 "use client";
 
-import { ElementRef, useCallback, useEffect, useRef, useState } from "react";
+import { ComponentRef, useCallback, useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
@@ -9,7 +9,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
 import styles from "./styles.module.scss";
 
-export const ImageGallery = ({
+export const SliderCarousel = ({
   images,
   initialActiveImageIndex,
   onClose,
@@ -20,7 +20,7 @@ export const ImageGallery = ({
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(initialActiveImageIndex ?? 0);
 
-  const dialogRef = useRef<ElementRef<"dialog">>(null);
+  const dialogRef = useRef<ComponentRef<"dialog">>(null);
 
   const onPrev = useCallback(() => {
     setActiveImageIndex((current) => (current === 0 ? images.length - 1 : current - 1));

@@ -6,7 +6,7 @@ import { StaticImageData } from "next/image";
 import { Navbar } from "@/shared/components/Navbar";
 import { PageTitle } from "@/shared/components/PageTitle";
 import { Footer } from "@/shared/components/Footer";
-import { ImageGallery } from "@/shared/components/SliderCarousel";
+import { SliderCarousel } from "@/shared/components/SliderCarousel";
 import { GallerySection } from "./components/GallerySection";
 
 import { galleryImages } from "@/shared/data/galleryImages";
@@ -20,7 +20,7 @@ const GalleryPage = () => {
     <>
       <Navbar />
       {clickedElement && (
-        <ImageGallery
+        <SliderCarousel
           images={galleryImages}
           initialActiveImageIndex={galleryImages.indexOf(clickedElement)}
           onClose={() => setClickedElement(undefined)}

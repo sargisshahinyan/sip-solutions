@@ -11,7 +11,7 @@ import { PageTitle } from "@/shared/components/PageTitle";
 import { SectionTitle } from "@/shared/components/SectionTitle";
 import { Button } from "@/shared/components/Button";
 import { Wrapper } from "@/shared/components/Wrapper";
-import { ImageGallery } from "@/shared/components/SliderCarousel";
+import { SliderCarousel } from "@/shared/components/SliderCarousel";
 
 import { galleryImages } from "@/shared/data/galleryImages";
 
@@ -39,7 +39,7 @@ export default function Home() {
       <Navbar className={cx("sticky-navbar", { visible: !inView })} />
 
       {clickedElement && (
-        <ImageGallery
+        <SliderCarousel
           images={galleryImages}
           initialActiveImageIndex={galleryImages.indexOf(clickedElement)}
           onClose={() => setClickedElement(undefined)}

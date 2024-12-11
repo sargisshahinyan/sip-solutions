@@ -33,5 +33,15 @@
     &-text {
       font-size: 15px;
     }
+
+    &.with-social {
+      text-align: center;
+      flex-direction: column;
+      padding: 1.5rem 1.125rem;
+
+      #{$this}-social {
+        gap: 16px;
+      }
+    }
   }
 }

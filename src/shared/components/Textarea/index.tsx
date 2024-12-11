@@ -30,7 +30,7 @@ export const Textarea = ({
           {label}
         </label>
       )}
-      <textarea className={cx("textarea", textareaClassName, { resizable })} id={id} {...props} />
+      <textarea className={cx("textarea", textareaClassName, { resizable, error })} id={id} {...props} />
       {helperText && (
         <div
           className={cx("helper-text", {

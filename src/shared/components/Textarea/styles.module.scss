@@ -18,6 +18,12 @@
   padding: 0.75rem;
   color: var(--blue-dark);
   background-color: transparent;
+  &.error {
+    border-color: var(--red);
+    &:focus {
+      outline-color: var(--red);
+    }
+  }
   &::placeholder {
     color: rgba(0, 0, 0, 0.6);
   }

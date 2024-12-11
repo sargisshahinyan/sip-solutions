@@ -20,7 +20,7 @@ export const Input = ({ className, error, helperText, label, inputClassName, id,
           {label}
         </label>
       )}
-      <input id={id} className={cx("input", inputClassName)} {...props} />
+      <input id={id} className={cx("input", inputClassName, { error })} {...props} />
       {helperText && (
         <div
           className={cx("helper-text", {

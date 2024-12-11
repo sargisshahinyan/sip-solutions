@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
+import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
 import styles from "./styles.module.scss";
 
@@ -60,6 +61,9 @@ export const ImageGallery = ({
   const activeImage = images[activeImageIndex];
   return (
     <dialog onClose={onClose} ref={dialogRef} className={styles["slider-carousel-dialog"]}>
+      <button className={styles["close-button"]} onClick={onClose}>
+        <FontAwesomeIcon className={styles.close} icon={faXmark} />
+      </button>
       <div className={styles["slider-carousel-wrapper"]}>
         <button className={styles["arrow-button"]} onClick={onPrev}>
           <FontAwesomeIcon className={styles.arrow} icon={faChevronLeft} />
